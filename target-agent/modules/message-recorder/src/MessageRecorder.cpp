@@ -25,12 +25,10 @@ namespace MessageRecorder {
 CMessageRecorder::CMessageRecorder() :
         mPathHandler(new CPathHandler()), mSerializer(new CSerializer()), mPartNumber(
             0), mFileHandles(), lastPosition(
-                std::make_pair(0, mFileHandles.begin())), /*mCurrentPosition(
-                                                             0), mCurrentIterator(mFileHandles.end()),*/mSender(
+                std::make_pair(0, mFileHandles.begin())), mSender(
             Mediator::CTargetAgentRuntime::getUniqueInstance()->getComController()), recorderConfig(
         Mediator::CTargetAgentRuntime::getUniqueInstance()->getConfigProvider()) {
-    //mCrtMode = (recorderConfig->isRecorderOn()) ? RECORDING : BUFFERING;
-
+    
 }
 
 void CMessageRecorder::recordMessage(
